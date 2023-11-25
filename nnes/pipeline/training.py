@@ -6,7 +6,7 @@ from torch import Tensor
 
 from typing import Callable, Any
 
-from callbacks import EpochCallback
+from nnes.pipeline.callbacks import EpochCallback
 
 
 class TrainSetup:
