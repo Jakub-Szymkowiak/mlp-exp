@@ -1,5 +1,5 @@
-from callbacks import EpochCallback
-from training import TrainSetup, train
+from nnes.pipeline.callbacks import EpochCallback
+from nnes.pipeline.training import TrainSetup, train
 
 from typing import Callable, Dict
 
