@@ -1,6 +1,6 @@
 from torch.nn.modules.loss import _Loss
-
-from torch import Module, Tensor
+from torch.nn import Module
+from torch import Tensor
 
 
 def evaluate_loss(
