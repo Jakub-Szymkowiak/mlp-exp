@@ -16,4 +16,5 @@ def get_tensors_from_image(image: Tensor) -> Tuple[Tensor, Tensor]:
     return X, Y
 
 def get_image_from_tensor(Y: Tensor, image_shape: Tuple) -> Tensor:
-    return 255 * Y.view(*image_shape).to(torch.uint8)
+    reconstructed =  255 * Y.view(*image_shape)
+    return reconstructed.to(torch.uint8)
