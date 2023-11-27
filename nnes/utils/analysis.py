@@ -18,7 +18,7 @@ def get_MLP_neuron_values(model: Module, X: Tensor) -> Tuple[List, List]:
     return pre_activation, post_activation
 
 def display_MLP_neuron_values(neuron_values: List[Tensor], subplots_kwargs=None) -> None:
-    fig = go.make_subplots(
+    fig = make_subplots(
         rows=len(neuron_values), 
         cols=1, 
         **subplots_kwargs)
