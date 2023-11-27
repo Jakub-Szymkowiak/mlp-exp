@@ -28,7 +28,7 @@ class TrainSetup:
 def train(
         train_setup: TrainSetup, 
         epoch_callback: EpochCallback
-    ) -> None:
+    ) -> Module:
 
     train_setup.model.train()
     for epoch in range(train_setup.num_epochs):
@@ -39,7 +39,7 @@ def train(
             loss.backward()
             train_setup.optimizer.step()
         epoch_callback(train_setup=train_setup, epoch=epoch)
-    return train_setup
+    return train_setup.model
 
 def setup_training(
         model: Module,

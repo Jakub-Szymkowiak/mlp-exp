@@ -7,7 +7,7 @@ from torch import Tensor
 from typing import List, Tuple
 
 
-def get_MLP_neuron_values(model: Module, input: Tensor) -> Tuple[List, List]:
+def get_MLP_neuron_values(model: Module, X: Tensor) -> Tuple[List, List]:
     pre_activation, post_activation = [], []
     for layer in model.children():
         X = layer(X)
