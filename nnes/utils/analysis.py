@@ -9,7 +9,7 @@ from typing import List, Tuple
 
 def get_MLP_neuron_values(model: Module, X: Tensor) -> Tuple[List, List]:
     pre_activation, post_activation = [], []
-    for layer in model.children():
+    for layer in model.layers:
         X = layer(X)
         if isinstance(layer, Linear):
             pre_activation.append(X.detach())
@@ -27,10 +27,8 @@ def display_MLP_neuron_values(neuron_values: List[Tensor]) -> None:
         normalized = (np_out - np_out.min()) / (np_out.max() - np_out.min())
         trace = go.Heatmap(
             z=normalized,
-            colorscale='Viridis',
-            row=i+1,
-            col=1)
-        fig.add_trace(trace)
+            colorscale='Viridis')
+        fig.add_trace(trace, row=i+1, col=1)
 
     fig.show()
 
