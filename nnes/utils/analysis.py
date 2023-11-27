@@ -30,5 +30,5 @@ def display_MLP_neuron_values(neuron_values: List[Tensor]) -> None:
             colorscale='Viridis')
         fig.add_trace(trace, row=i+1, col=1)
 
-    fig.show()
+    return fig
 
