@@ -1,7 +1,8 @@
 import plotly.graph_objects as go
 
 from plotly.subplots import make_subplots
-from torch.nn import Linear, Module, Tensor
+from torch.nn import Linear, Module
+from torch import Tensor
 
 from typing import List, Tuple
 
