@@ -34,10 +34,9 @@ def train(
     for epoch in range(train_setup.num_epochs):
         for batch_x, batch_y in train_setup.dataloader:
             train_setup.optimizer.zero_grad()
-            print("test")
             output = train_setup.model(batch_x)
-            print("test1")
             loss = train_setup.objective(output, batch_y)
+            print("test")
             loss.backward()
             train_setup.optimizer.step()
         epoch_callback(train_setup=train_setup, epoch=epoch)
