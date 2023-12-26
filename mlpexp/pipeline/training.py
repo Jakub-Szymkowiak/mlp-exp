@@ -33,7 +33,6 @@ def train(
     train_setup.model.train()
     for epoch in range(train_setup.num_epochs):
         for batch_x, batch_y in train_setup.dataloader:
-            print(batch_x.shape)
             train_setup.optimizer.zero_grad()
             output = train_setup.model(batch_x)
             loss = train_setup.objective(output, batch_y)
