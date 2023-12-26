@@ -38,6 +38,7 @@ def train(
             loss = train_setup.objective(output, batch_y)
             loss.backward()
             train_setup.optimizer.step()
+        print("test")
         epoch_callback(train_setup=train_setup, epoch=epoch)
     return train_setup.model
 
