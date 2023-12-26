@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='nnes',
+    name='mlpexp',
     version='0.1',
     packages=find_packages(),
     install_requires=[
@@ -10,5 +10,5 @@ setup(
         'torch'
     ],
     author='Jakub Szymkowiak',
-    description='Neural Network Experimental Suite'
+    description='mlp-exp'
 )
