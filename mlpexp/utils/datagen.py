@@ -27,11 +27,11 @@ def rectangles_on_a_grid(grid_size: Tuple, sizes: List[Tuple], num_samples: int=
 
             grid[x1:x2, y1:y2] = class_id
 
-        Y = F.one_hot(grid, num_classes=num_classes + 1).to(torch.float)
+        Y = F.one_hot(grid, num_classes=num_classes + 1).view(-1, num_classes + 1).to(torch.float)
 
         x_coords = torch.arange(grid_size[0]).view(-1, 1).expand(grid_size)
         y_coords = torch.arange(grid_size[1]).view(1, -1).expand(grid_size)
-        X = torch.stack((x_coords, y_coords), dim=-1).to(torch.float)
+        X = torch.stack((x_coords, y_coords), dim=-1).view(-1, 2).to(torch.float)
 
         dataset.append((X, Y))
 
