@@ -31,7 +31,7 @@ def rectangles_on_a_grid(grid_size: Tuple, sizes: List[Tuple], num_samples: int=
 
         x_coords = torch.arange(grid_size[0]).view(-1, 1).expand(grid_size)
         y_coords = torch.arange(grid_size[1]).view(1, -1).expand(grid_size)
-        X = torch.stack((x_coords, y_coords), dim=-1)
+        X = torch.stack((x_coords, y_coords), dim=-1).to(torch.float)
 
         dataset.append((X, Y))
 
