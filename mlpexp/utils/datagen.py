@@ -11,7 +11,7 @@ def rectangles_on_a_grid(grid_size: Tuple, sizes: List[Tuple], num_samples: int=
     dataset = []
 
     for _ in range(num_samples):
-        grid = torch.zeros(grid_size, dtype=torch.long)
+        grid = torch.zeros(grid_size)
 
         for class_id in range(1, num_classes + 1):
             rect_width, rect_height = sizes[class_id - 1]
